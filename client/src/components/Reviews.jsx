@@ -19,7 +19,7 @@ class Reviews extends React.Component {
   }
 
   getReviews (restaurant_id) {
-    axios.get(`/restaurant/${restaurant_id}`)
+    axios.get(`/restaurant?id=${restaurant_id}`)
     .then (data => {
       
       this.setState ({

@@ -12,7 +12,7 @@ const getAllReviews  = (id, callback) => {
     if (err) {
       callback(err);
     } else {
-      // console.log('data from DB', data)
+      
       callback(null,data)
     }
   })

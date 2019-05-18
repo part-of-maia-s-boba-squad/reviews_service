@@ -12,9 +12,9 @@ app.use(cors());
 
 
 
-app.get('/restaurant/:id', (req, res) => {
+app.get('/restaurant', (req, res) => {
 
-    db.getAllReviews(req.params.id, (err, data) => {
+    db.getAllReviews(req.query.id, (err, data) => {
         if (err) {
             res.status(500).send()
         } else {
