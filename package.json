@@ -1,17 +1,32 @@
 {
-  "name": "",
-  "version": "",
+  "name": "Open_Table",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
-  "license": "",
-  "engines": {
-    "node": ">=6.13.0"
-  },
+  "main": "index.js",
   "scripts": {
-  },
-  "dependencies": {
+    "react-dev": "webpack -d --watch",
+    "start": "nodemon ./server/server.js",
+    "seed": "node db/seed.js"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "eslint": "^5.16.0",
+    "express": "^4.15.0",
+    "faker": "^4.1.0",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.19.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "sqlite3": "^4.0.6"
   }
 }
