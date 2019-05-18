@@ -19,9 +19,9 @@ class Reviews extends React.Component {
   }
 
   getReviews (restaurant_id) {
-    axios.get(`/restaurant?id=${restaurant_id}`)
+    axios.get(`/restaurant/${restaurant_id}`)
     .then (data => {
-      console.log('data received: ',data.data)
+      
       this.setState ({
         reviews: data.data
       })
