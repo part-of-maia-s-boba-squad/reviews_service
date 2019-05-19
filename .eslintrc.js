@@ -1,3 +1,4 @@
+    
 /**
  * These rules enforce the Hack Reactor Style Guide
  *
@@ -16,3 +17,4 @@ module.exports = {
     // http://eslint.org/docs/rules/
   }
 };
+

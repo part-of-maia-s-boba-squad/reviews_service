@@ -6,8 +6,8 @@ class Reviews extends React.Component {
     super (props);
     
     this.state = {
-      reviews: [],
-      users: []
+      reviews: []
+      
     }
 
     this.getReviews = this.getReviews.bind(this);
@@ -35,23 +35,8 @@ class Reviews extends React.Component {
   render () {
     
     return (
-      <div className="overall_content">
-        <h2>What 1293 People Are Saying </h2>
-        {/* create a line with css for h3 element */}
-        <div className="rating_left_col">
-          <div>Overall ratings and reviews</div>
-          <div>Reviews can only be made by diners who have eaten at this restaurant</div>
-          <div id="stars">4.7 based on recent ratings</div>        
-        {/* use css to create stars here */}
-        <div className="categories_score">4.6 | 4.6 | 4.6 | 4.3 </div>
-        <div className="categories_name">Food | Service | Ambience | Value</div>
-        </div>
-        <div className="rating_right_col">
-
-        </div>
-        <div className="reviews_section">
-        
-       </div>
+      <div className="content">
+        Hello World!
       </div>
     )
   }
@@ -59,3 +44,5 @@ class Reviews extends React.Component {
 
 
 export default Reviews;
+
+
