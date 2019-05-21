@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import ReactStars from 'react-stars';
 import ReactStars from 'react-rating-stars-component';
 
 class Ratings extends React.Component {
@@ -18,7 +17,7 @@ class Ratings extends React.Component {
             <ReactStars 
             count={5}
             size={18}
-            color2={'#c12043'}
+            color2={'#da3743'}
             edit={true}
             half={true} />        
           </div>

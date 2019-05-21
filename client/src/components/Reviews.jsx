@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Ratings from './Ratings.jsx';
+import Sorting from './Sorting.jsx';
+
 
 class Reviews extends React.Component {
   constructor (props) {
@@ -13,10 +15,6 @@ class Reviews extends React.Component {
 
     this.getReviews = this.getReviews.bind(this);
 
-  }
-
-  componentDidMount() {
-    this.getReviews(3)
   }
 
   getReviews (restaurant_id) {
@@ -38,6 +36,7 @@ class Reviews extends React.Component {
     return (
       <div className="content">
         <Ratings />
+        <Sorting />
       </div>
     )
   }
