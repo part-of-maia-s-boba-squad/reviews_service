@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactStars from 'react-rating-stars-component';
 
+
 class Ratings extends React.Component {
   
   render() { 
@@ -17,9 +18,15 @@ class Ratings extends React.Component {
             <ReactStars 
             count={5}
             size={18}
-            color2={'#da3743'}
-            edit={true}
-            half={true} />        
+            display={4.5}
+            color1={'#da3743'}
+            edit={false}
+            half={true}
+            />
+         
+
+
+
           </div>
 
           <div className="rt_l5">

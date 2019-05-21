@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Ratings from './Ratings.jsx';
 import Sorting from './Sorting.jsx';
-
+import Feeds from './Feeds.jsx';
 
 class Reviews extends React.Component {
   constructor (props) {
@@ -37,6 +37,7 @@ class Reviews extends React.Component {
       <div className="content">
         <Ratings />
         <Sorting />
+        <Feeds />
       </div>
     )
   }
