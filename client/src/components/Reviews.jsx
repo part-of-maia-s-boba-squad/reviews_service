@@ -19,7 +19,7 @@ class Reviews extends React.Component {
   }
  
   componentDidMount() {
-    this.getReviews(6);
+    this.getReviews(3);
   }
 
   getReviews (restaurant_id) {
@@ -42,7 +42,7 @@ class Reviews extends React.Component {
       <div className="content">
         <Ratings data={this.state.reviews}/>
         <Sorting />
-        <Feeds />
+        <Feeds data={this.state.reviews}/>
       </div>
     )
   }

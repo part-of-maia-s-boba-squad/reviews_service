@@ -1,13 +1,5 @@
 const faker = require('faker');
 
-var users = [];
-
-for(var i = 0; i < 20; i++) {
-    users.push({name: faker.name.findName(), location: faker.address.city(), reviews: Math.floor(Math.random() * (21 - 1)) + 1 });
-    
-};
-
-
 var restaurants = [];
 
 for (var j = 0; j < 10; j++) {
@@ -16,10 +8,13 @@ for (var j = 0; j < 10; j++) {
 
 var reviews = [];
 
-for (var k = 0; k < 50; k++) {
+for (var k = 0; k < 100; k++) {
     reviews.push({
-        user_id:Math.floor(Math.random() * (21 - 1)) + 1,
         restaurant_id: Math.floor(Math.random() * (11 - 1)) + 1,
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),      
+        location: faker.address.city(),
+        total_reviews: Math.floor(Math.random() * (21 - 1)) + 1,
         overall: Math.floor(Math.random() * (6 - 1)) + 1,
         food: Math.floor(Math.random() * (6 - 1)) + 1,
         service: Math.floor(Math.random() * (6 - 1)) + 1,
@@ -30,12 +25,10 @@ for (var k = 0; k < 50; k++) {
     })
 };
 
-// console.log(users);
-// console.log(reviews);
-// console.log(restaurants);
+console.log('reviews', reviews)
 
 module.exports = {
-    users,
+
     restaurants,
     reviews
 }

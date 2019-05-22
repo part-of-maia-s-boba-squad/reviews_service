@@ -6,7 +6,7 @@ class Ratings extends React.Component {
 
 
   render() { 
-    console.log('props', this.props.data)
+    
     const data = this.props.data;
     
     const overall = data.map(data => {
