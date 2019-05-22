@@ -41,11 +41,32 @@ class Feeds extends React.Component {
               
               <div className="rev_categories">
                 <span className="rv_1">Overall</span>
+                <span className="rv_num">5</span>
+
+                <span className="rv_text">Food</span>
+                <span className="rv_num">5</span>
+
+                <span className="rv_text1">Service</span>
+                <span className="rv_num">5</span>
+
+                <span className="rv_text2">Ambience</span>
+                <span className="rv_num1">5</span>
               </div>
             </div>
             <div className="rev_text">
+              <p className="rv_txt">We always love our dinner and time with everyone on the staff 👍</p>
+            </div>
+            <div className="rev_footer">
+              <div className="ic_rp">
+                <div className="report">
+                  <i className="far fa-flag"></i>
+                  <div className="fa_txt">Report</div>
+
+                  <i className="far fa-caret-square-up"></i>
+                  <div className="fa_txt">Helpful</div>
                 </div>
-            <div className="rev_btn"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
