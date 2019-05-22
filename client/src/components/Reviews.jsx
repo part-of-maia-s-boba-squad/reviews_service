@@ -19,15 +19,14 @@ class Reviews extends React.Component {
   }
  
   componentDidMount() {
-    this.getReviews(3);
+    this.getReviews();
   }
 
-  getReviews (restaurant_id) {
-    axios.get(`/restaurant?id=${restaurant_id}`)
-    .then (data => {
-      
+  getReviews () {
+    axios.get(`/${window.location.href.split('/')[4]}`)
+    .then (response => {
       this.setState ({
-        reviews: data.data
+        reviews: response.data
       })
     })
     .catch( err => {

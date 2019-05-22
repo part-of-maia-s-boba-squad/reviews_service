@@ -6,15 +6,15 @@ const path = require('path');
 const PORT = 3007;
 const app = express();
 
-app.use(express.static(__dirname + './../client/dist/'));
+app.use('/restaurant/:id', express.static(__dirname + './../client/dist/'));
+app.use('/', express.static(__dirname + './../client/dist/'));
 app.use(bodyParser.json());
 app.use(cors());
 
 
-
-app.get('/restaurant', (req, res) => {
-
-    db.getAllReviews(req.query.id, (err, data) => {
+app.get('/:id', (req, res) => {
+    
+    db.getAllReviews(req.params.id, (err, data) => {
         if (err) {
             res.status(500).send()
         } else {
