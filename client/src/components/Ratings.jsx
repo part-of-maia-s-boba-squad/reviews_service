@@ -3,11 +3,45 @@ import ReactStars from 'react-rating-stars-component';
 
 
 class Ratings extends React.Component {
-  
+
+
   render() { 
+    console.log('props', this.props.data)
+    const data = this.props.data;
+    
+    const overall = data.map(data => {
+      return data.overall;
+    }).reduce((total, val) => {
+      return total + val
+    }, 0);
+
+    const foods = data.map(data => {
+      return data.food;
+    }).reduce((total, val) => {
+      return total + val
+    }, 0);
+
+    const services = data.map(data => {
+      return data.service;
+    }).reduce((total, val) => {
+      return total + val
+    }, 0);
+
+    const ambience = data.map(data => {
+      return data.ambience;
+    }).reduce((total, val) => {
+      return total + val
+    }, 0);
+
+    const value = data.map(data => {
+      return data.value;
+    }).reduce((total, val) => {
+      return total + val
+    }, 0);
+    
     return (
     <div className="rating_content">
-      <div className="rt_l1">What 1293 People Are Saying </div>
+      <div className="rt_l1">What {data.length} People Are Saying </div>
 
       <div className="rating">
         <div className="rt_left">
@@ -18,38 +52,33 @@ class Ratings extends React.Component {
             <ReactStars 
             count={5}
             size={18}
-            display={4.5}
             color1={'#da3743'}
             edit={false}
             half={true}
             />
-         
-
-
-
           </div>
 
           <div className="rt_l5">
-            <span className="span_1">4.7</span>
+            <span className="span_1">{(overall / data.length).toFixed(1)}</span>
             <span className="span_2">based on recent ratings</span>
           </div>        
           </div>
 
           <div className="rt_l6">
             <div className="score_1">
-              <div className="cat_1">4.6</div>
+              <div className="cat_1">{(foods/ data.length).toFixed(1)}</div>
               <div className="cat_2">Food</div>
             </div>
             <div className="score_2">
-              <div className="cat_3">4.6</div>
+              <div className="cat_3">{(services/ data.length).toFixed(1)}</div>
               <div className="cat_4">Service</div>
             </div>
             <div className="score_3">
-              <div className="cat_5">4.6</div>
+              <div className="cat_5">{(ambience/ data.length).toFixed(1)}</div>
               <div className="cat_6">Ambience</div>
             </div>
             <div className="score_4">
-              <div className="cat_7">4.3</div>
+              <div className="cat_7">{(value/ data.length).toFixed(1)}</div>
               <div className="cat_8">Value</div>
             </div>  
           </div>

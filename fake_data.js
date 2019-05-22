@@ -24,14 +24,15 @@ for (var k = 0; k < 50; k++) {
         food: Math.floor(Math.random() * (6 - 1)) + 1,
         service: Math.floor(Math.random() * (6 - 1)) + 1,
         ambience: Math.floor(Math.random() * (6 - 1)) + 1,
+        value: Math.floor(Math.random() * (6 - 1)) + 1,
         text: faker.lorem.paragraph(),
         created_at: faker.date.past()
     })
 };
 
-console.log(users);
-console.log(reviews);
-console.log(restaurants);
+// console.log(users);
+// console.log(reviews);
+// console.log(restaurants);
 
 module.exports = {
     users,

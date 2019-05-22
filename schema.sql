@@ -29,6 +29,7 @@ CREATE TABLE reviews (
     food INT,
     service INT,
     ambience INT,
+    value INT,
     text TEXT,
     created_at TEXT,
     FOREIGN KEY (user_id) REFERENCES users(id),
