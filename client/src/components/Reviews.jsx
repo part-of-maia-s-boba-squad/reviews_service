@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Ratings from './Ratings.jsx';
+import Sorting from './Sorting.jsx';
+import Feeds from './Feeds.jsx';
 
 class Reviews extends React.Component {
   constructor (props) {
@@ -7,23 +10,23 @@ class Reviews extends React.Component {
     
     this.state = {
       reviews: [],
-      users: []
+      
+      
     }
 
     this.getReviews = this.getReviews.bind(this);
 
   }
-
+ 
   componentDidMount() {
-    this.getReviews(3)
+    this.getReviews();
   }
 
-  getReviews (restaurant_id) {
-    axios.get(`/restaurant?id=${restaurant_id}`)
-    .then (data => {
-      console.log('data received: ',data.data)
+  getReviews () {
+    axios.get(`/${window.location.href.split('/')[4]}`)
+    .then (response => {
       this.setState ({
-        reviews: data.data
+        reviews: response.data
       })
     })
     .catch( err => {
@@ -35,23 +38,10 @@ class Reviews extends React.Component {
   render () {
     
     return (
-      <div className="overall_content">
-        <h2>What 1293 People Are Saying </h2>
-        {/* create a line with css for h3 element */}
-        <div className="rating_left_col">
-          <div>Overall ratings and reviews</div>
-          <div>Reviews can only be made by diners who have eaten at this restaurant</div>
-          <div id="stars">4.7 based on recent ratings</div>        
-        {/* use css to create stars here */}
-        <div className="categories_score">4.6 | 4.6 | 4.6 | 4.3 </div>
-        <div className="categories_name">Food | Service | Ambience | Value</div>
-        </div>
-        <div className="rating_right_col">
-
-        </div>
-        <div className="reviews_section">
-        
-       </div>
+      <div className="content">
+        <Ratings data={this.state.reviews}/>
+        <Sorting />
+        <Feeds data={this.state.reviews}/>
       </div>
     )
   }
@@ -59,3 +49,5 @@ class Reviews extends React.Component {
 
 
 export default Reviews;
+
+
