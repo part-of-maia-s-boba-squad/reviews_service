@@ -2,7 +2,22 @@ import React, {Component} from 'react';
 import ReactStars from 'react-rating-stars-component';
 
 class ShowFullText extends React.Component {
+  constructor () {
+    super ();
 
+    this.state = {
+      likeCount: false 
+    }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({
+      likeCount: !this.state.likeCount
+    })
+  }
   render () {
     const review = this.props.review
      
@@ -73,7 +88,10 @@ class ShowFullText extends React.Component {
               </div>
               <div className="test2">
                 <i className="far fa-caret-square-up"></i>
-                <div className="fa_txt">Helpful</div>
+                {(!this.state.likeCount) ? 
+                  (<div onClick={(e) => this.handleClick(e)}className="fa_txt">Helpful</div>) 
+                  : (<div onClick={(e) => this.handleClick(e)}className="fa_txt">Helpful(1)</div>)}
+                
               </div>
             </div>
           </div>

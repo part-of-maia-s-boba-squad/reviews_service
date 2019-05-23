@@ -948,6 +948,7 @@ select{
   color: #6f737b;
   height: 20px;
   width: 62px;
+  cursor: pointer;
 }
 
 .fa_txt:hover {
