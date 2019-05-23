@@ -171,7 +171,7 @@ class Ratings extends React.Component {
         </div>
       </div>
       <div className="link">
-        <a href="" className="link">Best Restaurants in Pacific Heights ></a>
+        <a href="//www.opentable.com/s/best-restaurants-in-pacific-heights/n42" className="link">Best Restaurants in Pacific Heights ></a>
       </div>
 
     </div> 
@@ -179,3 +179,4 @@ class Ratings extends React.Component {
 };
 
 export default Ratings;
+
