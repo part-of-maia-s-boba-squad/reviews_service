@@ -36,7 +36,7 @@ class ShowFullText extends React.Component {
                 edit={false}
                 half={true} />
               </div>
-              <div className="text">Dined 3 days ago</div>
+              <div className="text">Dined {review.date} days ago</div>
             </div>
               
             <div className="rev_categories">
@@ -60,8 +60,11 @@ class ShowFullText extends React.Component {
           </div>
           <div className="rev_footer">
             <div className="ic_rp">
-            <a href="#"  
-            className="reviewReadMore oc-reviews-4cf47c14" onClick={(e) => this.props.toggle(e)}>- Read less</a>
+            {/* show/hide Read Less button */}
+            {review.text.length > 150 ? (<a href="#"  
+            className="reviewReadMore" onClick={(e) => this.props.toggle(e)}>- Read less</a>) 
+            : (<div className="hide"></div>)}
+
             </div>
             <div className="report">
               <div className="test1">

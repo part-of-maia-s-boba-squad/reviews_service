@@ -25,7 +25,7 @@ CREATE TABLE reviews (
     ambience INT,
     value INT,
     text TEXT,
-    created_at TEXT,
+    date INT,
     FOREIGN KEY (restaurant_id) REFERENCES restaurants(id)
 )
 
