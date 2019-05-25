@@ -21,6 +21,16 @@ module.exports = {
           }
         }
       }
+
+    //   {
+    //     test: /\.css$/,
+    //     loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'),
+    //     include: __dirname + './client/dist/style.css'
+    // }
     ]
   }
+
+//   // plugins: [
+//   //   new ExtractTextPlugin("style.css"),
+// ]
 };

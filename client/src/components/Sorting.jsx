@@ -4,16 +4,17 @@ class Sorting extends React.Component {
 
 
   render() { 
+
     return (
       <div className="reviewToolbar">
         <div className="sort_by">Sort by</div>
 
         <div className="dropdown">
           <div className="dd_box">
-            <select className="select">
-              <option className="far fa-circle" value="Newest">Newest</option>
-              <option value="Highest Rating">Highest Rating</option>
-              <option value="Lowest Rating">Lowest Rating</option>
+            <select onChange={(e) => this.props.handleChange(e)} className="select">
+              <option className="far fa-circle" name="Newest">Newest</option>
+              <option name="Highest Rating">Highest Rating</option>
+              <option name="Lowest Rating">Lowest Rating</option>
             </select>
           </div>
         </div>
