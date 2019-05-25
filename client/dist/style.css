@@ -328,6 +328,10 @@ body {
   margin-bottom: -2px;
 }
 
+.bar:hover{
+  border: 2px solid #da3743;
+}
+
 .bar_5 {
   width: 77%;
   background: #da3743;

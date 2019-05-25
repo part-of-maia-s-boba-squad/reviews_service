@@ -7,33 +7,34 @@ class Ratings extends React.Component {
 
   render() { 
     
-    const data = this.props.data;
+    const allData = this.props.value;
+    // const data = this.props.data;
     
-    const overall = data.map(data => {
+    const overall = allData.map(data => {
       return data.overall;
     }).reduce((total, val) => {
       return total + val
     }, 0);
 
-    const foods = data.map(data => {
+    const foods = allData.map(data => {
       return data.food;
     }).reduce((total, val) => {
       return total + val
     }, 0);
 
-    const services = data.map(data => {
+    const services = allData.map(data => {
       return data.service;
     }).reduce((total, val) => {
       return total + val
     }, 0);
 
-    const ambience = data.map(data => {
+    const ambience = allData.map(data => {
       return data.ambience;
     }).reduce((total, val) => {
       return total + val
     }, 0);
 
-    const value = data.map(data => {
+    const value = allData.map(data => {
       return data.value;
     }).reduce((total, val) => {
       return total + val
@@ -41,7 +42,7 @@ class Ratings extends React.Component {
     
     return (
     <div className="rating_content">
-      <div className="rt_l1">What {data.length} People Are Saying </div>
+      <div className="rt_l1">What {allData.length} People Are Saying </div>
 
       <div className="rating">
         <div className="rt_left">
@@ -59,26 +60,26 @@ class Ratings extends React.Component {
           </div>
 
           <div className="rt_l5">
-            <span className="span_1">{(overall / data.length).toFixed(1)}</span>
+            <span className="span_1">{(overall / allData.length).toFixed(1)}</span>
             <span className="span_2">based on recent ratings</span>
           </div>        
           </div>
 
           <div className="rt_l6">
             <div className="score_1">
-              <div className="cat_1">{(foods/ data.length).toFixed(1)}</div>
+              <div className="cat_1">{(foods/ allData.length).toFixed(1)}</div>
               <div className="cat_2">Food</div>
             </div>
             <div className="score_2">
-              <div className="cat_3">{(services/ data.length).toFixed(1)}</div>
+              <div className="cat_3">{(services/ allData.length).toFixed(1)}</div>
               <div className="cat_4">Service</div>
             </div>
             <div className="score_3">
-              <div className="cat_5">{(ambience/ data.length).toFixed(1)}</div>
+              <div className="cat_5">{(ambience/ allData.length).toFixed(1)}</div>
               <div className="cat_6">Ambience</div>
             </div>
             <div className="score_4">
-              <div className="cat_7">{(value/ data.length).toFixed(1)}</div>
+              <div className="cat_7">{(value/ allData.length).toFixed(1)}</div>
               <div className="cat_8">Value</div>
             </div>  
           </div>
@@ -108,31 +109,31 @@ class Ratings extends React.Component {
 
         <div className="rating_right_col">
           <div className="rt_right">
-            <div className="data">
-              <span className="data_num">5</span>
-              <div className="bar">
+            <div className="data" onClick={() => this.props.handleClick(5)}>
+              <span className="data_num" >5</span>
+              <div className="bar" >
                 <span className="bar_5"></span>
                 <span></span>
               </div>
             </div>
 
-            <div className="data">
+            <div className="data" onClick={() => this.props.handleClick(4)}>
               <span className="data_num">4</span>
-              <div className="bar">
+              <div className="bar" >
                 <span className="bar_4"></span>
                 <span></span>
               </div>
             </div>
 
-            <div className="data">
+            <div className="data" onClick={() => this.props.handleClick(3)}>
               <span className="data_num">3</span>
-              <div className="bar">
+              <div className="bar" >
                 <span className="bar_3"></span>
                 <span></span>
               </div>
             </div>
 
-            <div className="data">
+            <div className="data" onClick={() => this.props.handleClick(2)}>
               <span className="data_num">2</span>
               <div className="bar">
                 <span className="bar_2"></span>
@@ -140,7 +141,7 @@ class Ratings extends React.Component {
               </div>
             </div>
 
-            <div className="data">
+            <div className="data" onClick={() => this.props.handleClick(1)}>
               <span className="data_num">1</span>
               <div className="bar">
                 <span className="bar_1"></span>

@@ -9,13 +9,16 @@ class Reviews extends React.Component {
     super (props);
     
     this.state = {
-      reviews: [],
-      sortBy: 'Newest'     
+      allReviews: [],
+      reviews:[],
+      sortBy: 'Newest',
+      isClick: false,
+      filterNum: 0  
     }
 
     this.getReviews = this.getReviews.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
+    this.handleClick = this.handleClick.bind(this);
   }
  
   componentDidMount() {
@@ -26,7 +29,9 @@ class Reviews extends React.Component {
     axios.get(`/${window.location.href.split('/')[4]}`)
     .then (response => {
       this.setState ({
+        allReviews: response.data.sort((a,b) => a.date - b.date),
         reviews: response.data.sort((a,b) => a.date - b.date)
+
       })
     })
     .catch( err => {
@@ -39,20 +44,51 @@ class Reviews extends React.Component {
 
     if (e.target.value === 'Newest') {
       this.setState({
-        reviews: this.state.reviews.sort((a,b) => a.date - b.date)
+        reviews: this.state.allReviews.sort((a,b) => a.date - b.date)
       })
     }
     if (e.target.value === 'Highest Rating') {
       this.setState({
-        reviews: this.state.reviews.sort((a,b) => a.date - b.date).sort((a,b) => b.overall - a.overall)
+        reviews: this.state.allReviews.sort((a,b) => a.date - b.date).sort((a,b) => b.overall - a.overall)
       })
     }
     if (e.target.value === 'Lowest Rating') {
       this.setState({
-        reviews: this.state.reviews.sort((a,b) => a.date - b.date).sort((a,b) => a.overall - b.overall)
+        reviews: this.state.allReviews.sort((a,b) => a.date - b.date).sort((a,b) => a.overall - b.overall)
       })
     }
+  }
+
+  handleClick(v) {
     
+
+    if (v === 1) {
+      this.setState({
+        reviews: this.state.allReviews.filter(review => (review.overall === 1))
+      })
+    }
+    if (v === 2) {
+      this.setState({
+        reviews: this.state.allReviews.filter(review => (review.overall === 2))
+      })
+    }
+    if (v === 3) {
+      this.setState({
+        reviews: this.state.allReviews.filter(review => (review.overall === 3))
+      })
+    }
+    if (v === 4) {
+      this.setState({
+        reviews: this.state.allReviews.filter(review => (review.overall === 4))
+      })
+    }
+    if (v === 5) {
+      this.setState({
+        filterNum: 5,
+        reviews: this.state.allReviews.filter(review => (review.overall === 5))
+      })
+    }
+
   }
   
 
@@ -60,10 +96,9 @@ class Reviews extends React.Component {
 
     return (
       <div className="content">
-        <Ratings data={this.state.reviews}/>
+        <Ratings handleClick={this.handleClick} value={this.state.allReviews}/>
         <Sorting handleChange={this.handleChange}/>
-       
-         <FeedList data={this.state.reviews}/>
+        <FeedList data={this.state.reviews}/>
       </div>
     )
   }
