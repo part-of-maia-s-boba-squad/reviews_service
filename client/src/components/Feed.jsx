@@ -2,15 +2,16 @@ import React, {Component} from 'react';
 // import ReactStars from 'react-rating-stars-component';
 import ReadLess from './ReadLess.jsx';
 import ReadMore from './ReadMore.jsx';
+import Report from './Report.jsx';
 
 class Feed extends React.Component {
   constructor() {
     super ();
   
     this.state = {
-      showText : false 
+      showText : false,
     }
-    this.toggle = this.toggle.bind(this)
+    this.toggle = this.toggle.bind(this);
   }
 
   toggle (e) {
@@ -20,7 +21,6 @@ class Feed extends React.Component {
     });
   }
 
-
   render () {
     const isClicked = this.state.showText
     return (
@@ -29,6 +29,7 @@ class Feed extends React.Component {
       (<ReadMore review={this.props.value} toggle={this.toggle}/>)
       :
       (<ReadLess review={this.props.value} toggle={this.toggle}/>)}
+    
     </div>
      
     )

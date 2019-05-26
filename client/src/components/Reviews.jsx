@@ -59,30 +59,29 @@ class Reviews extends React.Component {
     }
   }
 
-  handleClick(v) {
+  handleClick(value) {
     
-
-    if (v === 1) {
+    if (value === 1) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 1))
       })
     }
-    if (v === 2) {
+    if (value === 2) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 2))
       })
     }
-    if (v === 3) {
+    if (value === 3) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 3))
       })
     }
-    if (v === 4) {
+    if (value === 4) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 4))
       })
     }
-    if (v === 5) {
+    if (value === 5) {
       this.setState({
         filterNum: 5,
         reviews: this.state.allReviews.filter(review => (review.overall === 5))
