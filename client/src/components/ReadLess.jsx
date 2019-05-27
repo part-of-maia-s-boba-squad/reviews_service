@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 import ReactStars from 'react-rating-stars-component';
+import Report from './Report.jsx';
 
-class ShowFullText extends React.Component {
+class ReadLess extends React.Component {
   constructor () {
     super ();
 
     this.state = {
-      likeCount: false 
+      likeCount: false,
+      showRep: false
     }
 
     this.handleClick = this.handleClick.bind(this);
+    this.showReport = this.showReport.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleClick(e) {
@@ -18,9 +22,24 @@ class ShowFullText extends React.Component {
       likeCount: !this.state.likeCount
     })
   }
+
+  showReport(e) {
+    e.preventDefault();
+    this.setState({
+      showRep: !this.state.showRep
+    })
+  }
+
+  handleCancel(e) {
+    e.preventDefault();
+    this.setState({
+      showRep: !this.state.showRep
+    })
+  }
+
   render () {
-    const review = this.props.review
-     
+    const review = this.props.review;
+    
     return (
      <div className="review_full_list" >
         <div className="rev_left">
@@ -81,24 +100,28 @@ class ShowFullText extends React.Component {
             : (<div className="hide"></div>)}
 
             </div>
-            <div className="report">
+           <div className="report">
               <div className="test1">
-                <i className="far fa-flag"></i>
-                <div className="fa_txt">Report</div>
+              <i className="far fa-flag"></i>
+                <div onClick={(e) => this.showReport(e)} className="fa_txt">Report</div>
+                {(this.state.showRep) ? <Report handleCancel={this.handleCancel}/> : <div className="report_hide"></div>}  
               </div>
+              
               <div className="test2">
                 <i className="far fa-caret-square-up"></i>
                 {(!this.state.likeCount) ? 
-                  (<div onClick={(e) => this.handleClick(e)}className="fa_txt">Helpful</div>) 
-                  : (<div onClick={(e) => this.handleClick(e)}className="fa_txt">Helpful(1)</div>)}
-                
+                  (<div onClick={(e) => this.handleClick(e)} className="fa_txt">Helpful</div>) 
+                  : (<div onClick={(e) => this.handleClick(e)} className="fa_txt">Helpful(1)</div>)} 
               </div>
+
             </div>
           </div>
-        </div>
+        </div> 
       </div>
     )
   }
 };
 
-export default ShowFullText;
+export default ReadLess;
+
+
