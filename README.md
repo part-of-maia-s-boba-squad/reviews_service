@@ -35,12 +35,12 @@ From within the root directory:
 ```sh
 npm install -g webpack
 npm install
-```
+
 mysql -u root < schema.sql : initialize database
 npm run seed: seed data into database
 npm run react-dev: run webpack
 npm start : run nodemon on server
 npm test: run test
 
-
+```
 
