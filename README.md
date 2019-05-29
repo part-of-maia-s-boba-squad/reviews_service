@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/krummurk/reservations-module
+  - https://github.com/krummurk/photos-module
+  - https://github.com/krummurk/textDetails_module
+  - https://github.com/krummurk/mapSearch-module
 
 ## Table of Contents
 
@@ -36,4 +36,11 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+mysql -u root < schema.sql : initialize database
+npm run seed: seed data into database
+npm run react-dev: run webpack
+npm start : run nodemon on server
+npm test: run test
+
+
 
