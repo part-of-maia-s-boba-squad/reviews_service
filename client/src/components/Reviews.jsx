@@ -3,6 +3,17 @@ import axios from 'axios';
 import Ratings from './Ratings.jsx';
 import Sorting from './Sorting.jsx';
 import FeedList from './FeedList.jsx';
+import style from 'styled-components';
+
+const Content = style.div`
+  height: 8906px 0px;
+  width: 524px 0px;
+  background-color: #f1f2f4;
+  font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+`;
 
 class Reviews extends React.Component {
   constructor (props) {
@@ -94,11 +105,11 @@ class Reviews extends React.Component {
   render () {
 
     return (
-      <div className="content">
+      <Content>
         <Ratings handleClick={this.handleClick} value={this.state.allReviews}/>
         <Sorting handleChange={this.handleChange}/>
         <FeedList data={this.state.reviews}/>
-      </div>
+      </Content>
     )
   }
 }
