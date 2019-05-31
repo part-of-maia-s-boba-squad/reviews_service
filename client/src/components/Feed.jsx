@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-// import ReactStars from 'react-rating-stars-component';
 import ReadLess from './ReadLess.jsx';
 import ReadMore from './ReadMore.jsx';
-import Report from './Report.jsx';
 
 class Feed extends React.Component {
   constructor() {

@@ -3,12 +3,12 @@ import axios from 'axios';
 import Ratings from './Ratings.jsx';
 import Sorting from './Sorting.jsx';
 import FeedList from './FeedList.jsx';
-import style from 'styled-components';
+import styled from 'styled-components';
 
-const Content = style.div`
+const Content = styled.div`
   height: 8906px 0px;
   width: 524px 0px;
-  background-color: #f1f2f4;
+  background-color: #fff;
   font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
     -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,7 +37,7 @@ class Reviews extends React.Component {
   }
 
   getReviews () {
-    axios.get(`/${window.location.href.split('/')[4]}`)
+    axios.get(`/API/restaurant/review/${window.location.href.split('/')[4]}`)
     .then (response => {
       this.setState ({
         allReviews: response.data.sort((a,b) => a.date - b.date),

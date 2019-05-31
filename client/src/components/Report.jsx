@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import style from 'styled-components';
+import styled from 'styled-components';
 
-const Box = style.div`
+const Box = styled.div`
   display: block;
   position: absolute;
   background: #ffffff;
@@ -18,7 +18,7 @@ const Box = style.div`
   width: 400px;
 `;
 
-const RepShow = style.div`
+const RepShow = styled.div`
   display: block;
   flex-direction: column;
   justify-content: flex-end;
@@ -29,7 +29,7 @@ const RepShow = style.div`
   text-align: center;
 `;
 
-const RepHeader = style.div`
+const RepHeader = styled.div`
   border-bottom: 1px solid #d8d9db;
   padding-bottom: 1rem;
   margin-bottom: 1rem; 
@@ -45,14 +45,14 @@ const RepHeader = style.div`
   color: #2d333f;
 `;
 
-const RepBody = style.div`
+const RepBody = styled.div`
   padding-left: 1rem;
   padding-right: 1rem;
   height: 255px;
   width: 368px;
 `;
 
-const RepTxt = style.div`
+const RepTxt = styled.div`
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 500;
@@ -62,13 +62,13 @@ const RepTxt = style.div`
   color: #2d333f;
 `;
 
-const Form = style.div`
+const Form = styled.div`
   display: block;
   height: 183px;
   width:368px;
 `;
 
-const RepReason = style.textarea`
+const RepReason = styled.textarea`
   margin-top: 16px;
   margin-bottom: 16px;
   padding: 8px;
@@ -99,7 +99,7 @@ const RepReason = style.textarea`
   -webkit-writing-mode: horizontal-tb !important; 
 `;
 
-const RepBtn = style.div`
+const RepBtn = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -109,7 +109,7 @@ const RepBtn = style.div`
   width: 336px;
 `;
 
-const Btn1 = style.button`
+const Btn1 = styled.button`
   -webkit-appearance: button;
   cursor: pointer;
   text-transform: none;
@@ -139,7 +139,7 @@ const Btn1 = style.button`
   box-sizing: border-box;
 `;
 
-const Btn2 = style.button`
+const Btn2 = styled.button`
   -webkit-appearance: button;
   cursor: pointer;
   text-transform: none;

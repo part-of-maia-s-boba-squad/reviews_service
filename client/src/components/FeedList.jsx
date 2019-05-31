@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Feed from './Feed.jsx';
-import style from 'styled-components';
+import styled from 'styled-components';
 
-const Content = style.div`
-  height: 7993px;
+const Content = styled.div`
+  margin-bottom: 100px;
   width: 519px;
 `;
 

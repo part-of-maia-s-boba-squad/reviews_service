@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import ReactStars from 'react-rating-stars-component';
-import style from 'styled-components';
+import styled from 'styled-components';
 
-const RatingContent = style.div`
+const RatingContent = styled.div`
   padding-bottom: 2rem;
   margin-bottom: 2rem;
   border-bottom: solid 1px #d8d9db;
@@ -10,7 +10,7 @@ const RatingContent = style.div`
   width: 524px;
 `;
 
-const RatingLine1 = style.div`
+const RatingLine1 = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.33;
@@ -27,7 +27,7 @@ const RatingLine1 = style.div`
   margin: 16px 0px;
 `;
 
-const Rating = style.div`
+const Rating = styled.div`
   display: flex;
   width: 100%;
   padding-bottom: 32px;
@@ -35,12 +35,12 @@ const Rating = style.div`
   width: 519px;
 `;
 
-const RatingLeft = style.div`
+const RatingLeft = styled.div`
   height: 269px;
   width: 263px;
 `;
 
-const RatingLine2 = style.div`
+const RatingLine2 = styled.div`
   height: 24px;
   width: 263px;
   font-size: 1rem;
@@ -49,7 +49,7 @@ const RatingLine2 = style.div`
   display: flex;
 `;
 
-const RatingLine3 = style.div`
+const RatingLine3 = styled.div`
   height: 42px;
   width: 263px;
   padding-top: 8px;
@@ -59,7 +59,7 @@ const RatingLine3 = style.div`
   display: block;
 `;
 
-const RatingLine4 = style.div`
+const RatingLine4 = styled.div`
   height: 64px;
   width: 263px;
   padding-top: 0.5rem;
@@ -75,7 +75,7 @@ const RatingLine4 = style.div`
   flex-wrap: nowrap;
 `;
 
-const RatingLine5 = style.div`
+const RatingLine5 = styled.div`
   margin: 0 0.5rem 0 0;
   font-weight: 500;
   display: flex;
@@ -84,19 +84,19 @@ const RatingLine5 = style.div`
   width: 155px; 
 `;
 
-const Span1 = style.span`
+const Span1 = styled.span`
   margin: 0 0.25rem;
   height: 20px;
   width: 19.5px;
 `;
 
-const Span2 = style.span`
+const Span2 = styled.span`
   margin: 0 0.25rem;
   height: 40px;
   width: 119.5px;
 `;
 
-const RatingLine6 = style.div`
+const RatingLine6 = styled.div`
   margin: 0;
   padding: 0;
   display: flex;
@@ -104,7 +104,7 @@ const RatingLine6 = style.div`
   width: 263px;
 `;
 
-const Score1 = style.div`
+const Score1 = styled.div`
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -125,7 +125,7 @@ const Score1 = style.div`
   }
 `;
 
-const Score2 = style.div`
+const Score2 = styled.div`
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -147,7 +147,7 @@ const Score2 = style.div`
   }
 `;
 
-const Score3 = style.div`
+const Score3 = styled.div`
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -170,7 +170,7 @@ const Score3 = style.div`
 `;
 
 
-const Cat1 = style.div`
+const Cat1 = styled.div`
   font-style: normal;
   font-weight: bold;
   line-height: 1.33;
@@ -178,7 +178,7 @@ const Cat1 = style.div`
   width: 30px;
 `;
 
-const Cat2 = style.div`
+const Cat2 = styled.div`
   font-size: 0.875rem;
   font-weight: normal;
   text-transform: capitalize;
@@ -187,7 +187,7 @@ const Cat2 = style.div`
   width: 30px;
 `;
 
-const Cat3 = style.div`
+const Cat3 = styled.div`
   font-style: normal;
   font-weight: bold;
   line-height: 1.33;
@@ -195,7 +195,7 @@ const Cat3 = style.div`
   width: 45px;
 `;
 
-const Cat4 = style.div`
+const Cat4 = styled.div`
   font-size: 0.875rem;
   font-weight: normal;
   text-transform: capitalize;
@@ -204,7 +204,7 @@ const Cat4 = style.div`
   width: 45px;
 `;
 
-const Cat5 = style.div`
+const Cat5 = styled.div`
   font-style: normal;
   font-weight: bold;
   line-height: 1.33;
@@ -212,7 +212,7 @@ const Cat5 = style.div`
   width: 60px;
 `;
 
-const Cat6 = style.div`
+const Cat6 = styled.div`
   font-size: 0.875rem;
   font-weight: normal;
   text-transform: capitalize;
@@ -221,7 +221,7 @@ const Cat6 = style.div`
   width: 60px;
 `;
 
-const RatingLine7 = style.div`
+const RatingLine7 = styled.div`
   padding-top: 1rem;
   max-width: 100%;
   height: 20px;
@@ -230,19 +230,19 @@ const RatingLine7 = style.div`
   align-items: center;
 `;
 
-const Icon = style.div`
+const Icon = styled.div`
   display: inherit;
   height: 18px;
   width: 26px;
 `;
 
-const Fa = style.i`
+const Fa = styled.i`
   height: 1.125rem;
   width: 1.125rem;
   margin-right: 0.5rem;
 `;
 
-const IconTxt1 = style.div`
+const IconTxt1 = styled.div`
   margin: 0 0 0 0.25rem;
   font-weight: 500;
   line-height: 1.43;
@@ -254,13 +254,13 @@ const IconTxt1 = style.div`
   &:hover {color: #da3743}
 `;
 
-const Ic_Txt = style.span`
+const Ic_Txt = styled.span`
   font-weight: normal;
   height: auto;
   width: auto;
 `;
 
-const RatingLine8 = style.div`
+const RatingLine8 = styled.div`
   padding-top: 1rem;
   max-width: 100%;
   height: 40px;
@@ -269,7 +269,7 @@ const RatingLine8 = style.div`
   align-items: center;
 `;
 
-const IconTxt2 = style.div`
+const IconTxt2 = styled.div`
   margin: 0 0 0 0.25rem;
   font-weight: 500;
   line-height: 1.43;
@@ -281,19 +281,19 @@ const IconTxt2 = style.div`
   &:hover {color: #da3743}
 `;
 
-const RightCol = style.div`
+const RightCol = styled.div`
   padding: 32px;
   height: 237px;
   width: 256px;
 `;
 
-const Right = style.div`
+const Right = styled.div`
   margin: 0px;
   height: 145px;
   width: 256px;
 `;
 
-const Data = style.div`
+const Data = styled.div`
   display: flex;
   padding-bottom: 0.5rem;
   align-items: center;
@@ -301,14 +301,14 @@ const Data = style.div`
   width: 256px;
 `;
 
-const DataNum = style.span`
+const DataNum = styled.span`
   margin-right: 0.5rem;
   width: 16px;
   height: 21px;
   text-align: center;
 `;
 
-const Bar = style.div`
+const Bar = styled.div`
   display: block;
   flex: auto;
   height: 1rem;
@@ -320,52 +320,52 @@ const Bar = style.div`
   &:hover {border: 2px solid #da3743;}
 `;
 
-const Bar5 = style.span`
+const Bar5 = styled.span`
   width: 77%;
   background: #da3743;
   height: 100%;
   display: block;
 `;
 
-const Bar4 = style.span`
+const Bar4 = styled.span`
   width: 15%;
   background: #da3743;
   height: 100%;
   display: block;
 `;
 
-const Bar3 = style.span`
+const Bar3 = styled.span`
   width: 5%;
   background: #da3743;
   height: 100%;
   display: block;
 `;
 
-const Bar2 = style.span`
+const Bar2 = styled.span`
   width: 2%;
   background: #da3743;
   height: 100%;
   display: block;
 `;
 
-const Bar1 = style.span`
+const Bar1 = styled.span`
   width: 0%;
   background: #da3743;
   height: 100%;
   display: block;
 `;
 
-const Span = style.span`
+const Span = styled.span`
   height: auto;
   width: auto;
 `;
 
-const Content = style.div`
+const Content = styled.div`
   height: 112px;
   width: 519px;
 `;
 
-const Content1 = style.div`
+const Content1 = styled.div`
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 500;
@@ -375,13 +375,13 @@ const Content1 = style.div`
   font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
 `;
 
-const Fas = style.i`
+const Fas = styled.i`
   height: 24px;
   width: 24px;
   margin-left: 4px;
 `;
 
-const Temp = style.div`
+const Temp = styled.div`
   font-size: 1rem;
   font-weight: 500;
   border-radius: .125rem;
@@ -397,21 +397,21 @@ const Temp = style.div`
   &:hover {border: 2px solid #da3743;}
 `;
 
-const Tem1 = style.div`
+const Tem1 = styled.div`
   display: flex;
   align-items: center;
   height: 20px;
   width: 180px;
 `;
 
-const Trophy = style.div`
+const Trophy = styled.div`
   display: inherit;
   align-self: baseline;
   height: 26px;
   width: 26px;
 `;
 
-const Text = style.div`
+const Text = styled.div`
   margin: 0px 0px 0px 4px;
   font-weight: 500;
   line-height: 1.43;
@@ -421,7 +421,7 @@ const Text = style.div`
   width: 180px;
 `;
 
-const Ext1 = style.div`
+const Ext1 = styled.div`
   font-size: 0.875rem;
   color: #2d333f;
   font-weight: 500;
@@ -430,18 +430,18 @@ const Ext1 = style.div`
   width: 180px;
 `;
 
-const Ext2 = style.div`
+const Ext2 = styled.div`
   height: 20px;
   width: 180px;
   font-weight: normal;
   color: #6f737b;
 `;
 
-const Link = style.div`
+const Link = styled.div`
   padding-top: 20px; 
 `;
 
-const Link1 = style.a`
+const Link1 = styled.a`
   color: #da3743;
   text-decoration: none;
   cursor: pointer;
@@ -459,7 +459,6 @@ class Ratings extends React.Component {
   render() { 
     
     const allData = this.props.value;
-    // const data = this.props.data;
     
     const overall = allData.map(data => {
       return data.overall;
