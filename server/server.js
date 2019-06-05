@@ -16,9 +16,7 @@ app.use('/restaurant/:id', express.static(__dirname + './../client/dist/'));
 app.use(bodyParser.json());
 app.use(cors());
 
-
-
-//GET req
+//original get req from FEC
 app.get('/:id', (req, res) => {
     db.getAllReviews(req.params.id, (err, data) => {
         if (err) {
@@ -27,6 +25,14 @@ app.get('/:id', (req, res) => {
             res.status(200).send(data)
         }
     });
+});
+
+
+// DB1: Postgres ------------------------------------------
+
+//GET req 
+app.get('/:id', (req, res) => {
+
 });
 
 //POST req
@@ -39,6 +45,28 @@ app.put();
 
 //DELETE req
 app.delete();
+
+
+
+// DB2: Cassandra ------------------------------------------
+
+//GET req
+app.get('/:id', (req, res) => {
+
+});
+
+//POST req
+app.post('', (req, res) => {
+    
+});
+
+//PUT req
+app.put();
+
+//DELETE req
+app.delete();
+
+
 
 
 //PORT
