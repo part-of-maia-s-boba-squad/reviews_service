@@ -37,12 +37,11 @@ class Reviews extends React.Component {
   }
 
   getReviews () {
-    axios.get(`/API/restaurant/review/${window.location.href.split('/')[4]}`)
+    axios.get(`/:id`)
     .then (response => {
       this.setState ({
         allReviews: response.data.sort((a,b) => a.date - b.date),
         reviews: response.data.sort((a,b) => a.date - b.date)
-
       })
     })
     .catch( err => {
@@ -75,28 +74,28 @@ class Reviews extends React.Component {
     if (value === 1) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 1))
-      })
+      });
     }
     if (value === 2) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 2))
-      })
+      });
     }
     if (value === 3) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 3))
-      })
+      });
     }
     if (value === 4) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 4))
-      })
+      });
     }
     if (value === 5) {
       this.setState({
         filterNum: 5,
         reviews: this.state.allReviews.filter(review => (review.overall === 5))
-      })
+      });
     }
 
   }

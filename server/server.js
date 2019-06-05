@@ -8,16 +8,16 @@ const PORT = 3007;
 const app = express();
 
 //localhost:3007/restaurant/8/ -> render template module + data
-// app.use('/restaurant/:id', express.static(__dirname + './../client/dist/'));
+app.use('/restaurant/:id', express.static(__dirname + './../client/dist/'));
 
 //localhost:3007/ -> render template module without any data
 // app.use('/', express.static(__dirname + './../client/dist/'));
-app.use(express.static(path.join(__dirname, './../client/dist/'))); 
+// app.use(express.static(path.join(__dirname, './../client/dist/'))); 
 app.use(bodyParser.json());
 app.use(cors());
 
 
-app.get('/API/restaurant/review/:id', (req, res) => {
+app.get('/:id', (req, res) => {
     
     db.getAllReviews(req.params.id, (err, data) => {
         if (err) {
