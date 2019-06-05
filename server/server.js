@@ -20,9 +20,9 @@ app.use(cors());
 app.get('/:id', (req, res) => {
     db.getAllReviews(req.params.id, (err, data) => {
         if (err) {
-            res.status(500).send()
+            res.status(500).send();
         } else {
-            res.status(200).send(data)
+            res.status(200).send(data);
         }
     });
 });
