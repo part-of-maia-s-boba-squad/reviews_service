@@ -17,17 +17,30 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
+
+//GET req
 app.get('/:id', (req, res) => {
-    
     db.getAllReviews(req.params.id, (err, data) => {
         if (err) {
             res.status(500).send()
         } else {
             res.status(200).send(data)
         }
-    })
-})
+    });
+});
+
+//POST req
+app.post('', (req, res) => {
+    
+});
+
+//PUT req
+app.put();
+
+//DELETE req
+app.delete();
 
 
+//PORT
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
 
