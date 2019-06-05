@@ -25,7 +25,7 @@ class Reviews extends React.Component {
       sortBy: 'Newest',
       isClick: false,
       filterNum: 0  
-    }
+    };
 
     this.getReviews = this.getReviews.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -37,7 +37,7 @@ class Reviews extends React.Component {
   }
 
   getReviews () {
-    axios.get(`/:id`)
+    axios.get(`/${window.location.href.split('/')[4]}`)
     .then (response => {
       this.setState ({
         allReviews: response.data.sort((a,b) => a.date - b.date),

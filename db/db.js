@@ -8,7 +8,7 @@ const getAllReviews  = (id, callback) => {
     if (err) {
       callback(err);
     } else {
-      callback(null,data)
+      callback(null,data);
     }
   });
 };
@@ -46,4 +46,4 @@ const deleteReview_Cassandra = () => {};
 
 module.exports = {
   getAllReviews
-}
+};

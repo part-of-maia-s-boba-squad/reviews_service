@@ -18,6 +18,7 @@ app.use(cors());
 
 //original get req from FEC
 app.get('/:id', (req, res) => {
+    console.log('data', req.params.id);
     db.getAllReviews(req.params.id, (err, data) => {
         if (err) {
             res.status(500).send();
@@ -28,43 +29,43 @@ app.get('/:id', (req, res) => {
 });
 
 
-// DB1: Postgres ------------------------------------------
+// // DB1: Postgres ------------------------------------------
 
-//GET req 
-app.get('/:id', (req, res) => {
+// //GET req 
+// app.get('/:id', (req, res) => {
 
-});
+// });
 
-//POST req
-app.post('', (req, res) => {
+// //POST req
+// app.post('', (req, res) => {
     
-});
+// });
 
-//PUT req
-app.put();
+// //PUT req
+// app.put();
 
-//DELETE req
-app.delete();
+// //DELETE req
+// app.delete();
 
 
 
-// DB2: Cassandra ------------------------------------------
+// // DB2: Cassandra ------------------------------------------
 
-//GET req
-app.get('/:id', (req, res) => {
+// //GET req
+// app.get('/:id', (req, res) => {
 
-});
+// });
 
-//POST req
-app.post('', (req, res) => {
+// //POST req
+// app.post('', (req, res) => {
     
-});
+// });
 
-//PUT req
-app.put();
+// //PUT req
+// app.put();
 
-//DELETE req
-app.delete();
+// //DELETE req
+// app.delete();
 
 
 
