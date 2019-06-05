@@ -21,9 +21,9 @@
 > API CRUD Information
 
 | API Endpoints               | Type   | Input               | Output                                    | Description                         |
-| --------------------------- | ------ | ------------------- | ----------------------------------------- | ----------------------------------- | 
+| --------------------------- | ------ | ------------------- | ----------------------------------------- | ----------------------------------- |
 | /API/restaurant/reviews/:id | GET    | Restaurant ID       | Restaurant Document with Array of reviews | Gets reviews for restaurant queried |
-| /API/restaurant/reviews/    | POST   | Restaurant Document | STATUS CODE 201                           | Create a Restaurant Document        | 
+| /API/restaurant/reviews/    | POST   | Restaurant Document | STATUS CODE 201                           | Create a Restaurant Document        |
 | /API/restaurant/reviews/:id | PATCH  | Restaurant ID       | STATUS CODE 200                           | Update a Restaurant Document        |
 | /API/restaurant/reviews/:id | DELETE | Restaurant ID       | STATUS CODE 200                           | Delete a Restaurant Document        |
 
