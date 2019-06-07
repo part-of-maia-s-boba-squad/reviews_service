@@ -11,7 +11,7 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [API Examples] (#apiexamples)
+1. [APIExamples] (#API Examples)
 1. [Setup Instructions](#setupinstructions)
 1. [Requirements](#requirements)
 1. [Development](#development)
@@ -29,10 +29,12 @@
 | /API/restaurant/reviews/:id | DELETE | Restaurant ID       | STATUS CODE 200                           | Delete a Restaurant Document        |
 
 ## API Examples
+
 > API CRUD Examples
-| Type | Response Body |
-|GET   |  [{reviewsId:42343,userId:6621207,reportCount:2,helpfulCount:12,overallRating:4,foodRating:5,serviceRating:5,ambienceRating:5,text:"Nemo similique vero ut quis deserunt. Natus ad laborum voluptatibus nisi veniam."} ,[<review2>], [<review3>], ... |
-|POST  |  {userId:6621207,reportCount:0,helpfulCount:0,overallRating:4,foodRating:5,serviceRating:5,ambienceRating:5,text:"Nemo similique vero ut quis deserunt. Natus ad laborum voluptatibus nisi veniam."} | 
+
+| Type | Example |
+| GET | {[{reviewsId:42343,userId:6621207,reportCount:2,helpfulCount:12,overallRating:4,foodRating:5,serviceRating:5,ambienceRating:5,text:"Nemo similique vero ut quis deserunt. Natus ad laborum voluptatibus nisi veniam."} ,[<review2>], [<review3>], ...} |
+| POST | {userId:6621207,reportCount:0,helpfulCount:0,overallRating:4,foodRating:5,serviceRating:5,ambienceRating:5,text:"Nemo similique vero ut quis deserunt. Natus ad laborum voluptatibus nisi veniam."}|
 
 ## Setup Instructions
 
