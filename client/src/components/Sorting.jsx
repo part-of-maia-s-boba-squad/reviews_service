@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import style from 'styled-components';
+import styled from 'styled-components';
 
-const Toolbar = style.div`
+const Toolbar = styled.div`
   height: 190px;
   width: 519px;
 `;
 
-const SortBy = style.div`
+const SortBy = styled.div`
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 500;
@@ -15,7 +15,7 @@ const SortBy = style.div`
   width: 519px;
 `;
 
-const DropDown = style.div`
+const DropDown = styled.div`
   width: 18rem;
   margin: 0.5rem 0;
   padding: 0;
@@ -23,7 +23,7 @@ const DropDown = style.div`
   width: 288px;
 `;
 
-const Box = style.div`
+const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,7 +39,7 @@ const Box = style.div`
   border: none;
 `;
 
-const Select = style.select`
+const Select = styled.select`
   margin: 0 0 0 0.25rem;
   font-weight: 500;
   line-height: 1.43;
@@ -55,14 +55,14 @@ const Select = style.select`
   &:hover {border: 2px solid #da3743;}
 `;
 
-const Keys = style.div`
+const Keys = styled.div`
   padding-top: 0.5rem;
   padding-bottom: 1rem;
   height: 108px;
   width: 519px;
 `;
 
-const KeyUnfiltered = style.label`
+const KeyUnfiltered = styled.label`
   align-items: center;
   margin-right: 1rem;
   margin-bottom: 1rem;
@@ -79,7 +79,7 @@ const KeyUnfiltered = style.label`
   &:hover {border: 2px solid #da3743;}
 `;
 
-const Rev1 = style.span`
+const Rev1 = styled.span`
   margin: 0 0 0 0.25rem;
   font-weight: 500;
   line-height: 1.43;
@@ -89,7 +89,7 @@ const Rev1 = style.span`
   width: 130px;
 `;
 
-const Square = style.input`
+const Square = styled.input`
   &: before {
   content: " ";
   display: inherit;

@@ -3,12 +3,12 @@ import axios from 'axios';
 import Ratings from './Ratings.jsx';
 import Sorting from './Sorting.jsx';
 import FeedList from './FeedList.jsx';
-import style from 'styled-components';
+import styled from 'styled-components';
 
-const Content = style.div`
+const Content = styled.div`
   height: 8906px 0px;
   width: 524px 0px;
-  background-color: #f1f2f4;
+  background-color: #fff;
   font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
     -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,7 +25,7 @@ class Reviews extends React.Component {
       sortBy: 'Newest',
       isClick: false,
       filterNum: 0  
-    }
+    };
 
     this.getReviews = this.getReviews.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -42,7 +42,6 @@ class Reviews extends React.Component {
       this.setState ({
         allReviews: response.data.sort((a,b) => a.date - b.date),
         reviews: response.data.sort((a,b) => a.date - b.date)
-
       })
     })
     .catch( err => {
@@ -75,28 +74,28 @@ class Reviews extends React.Component {
     if (value === 1) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 1))
-      })
+      });
     }
     if (value === 2) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 2))
-      })
+      });
     }
     if (value === 3) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 3))
-      })
+      });
     }
     if (value === 4) {
       this.setState({
         reviews: this.state.allReviews.filter(review => (review.overall === 4))
-      })
+      });
     }
     if (value === 5) {
       this.setState({
         filterNum: 5,
         reviews: this.state.allReviews.filter(review => (review.overall === 5))
-      })
+      });
     }
 
   }

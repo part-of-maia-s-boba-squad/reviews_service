@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import ReactStars from 'react-rating-stars-component';
 import Report from './Report.jsx';
-import style from 'styled-components';
+import styled from 'styled-components';
 
-const Full = style.div`
+const Full = styled.div`
   display: flex;
   flex-direction: row;
   padding-top: 1rem;
@@ -14,7 +14,7 @@ const Full = style.div`
   width: 512px;
 `;
 
-const FullTxt = style.div`
+const FullTxt = styled.div`
   overflow: visible;
   text-overflow: inherit;
   -webkit-line-clamp: inherit;
@@ -25,7 +25,7 @@ const FullTxt = style.div`
   -webkit-box-orient: vertical;
 `;
 
-const Para = style.p`
+const Para = styled.p`
   margin-bottom: 0;
   margin-top: 0;
   line-height: 1.5;
@@ -33,7 +33,7 @@ const Para = style.p`
   font-weight: normal;
 `;
 
-const Left = style.div`
+const Left = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,7 @@ const Left = style.div`
   flex: none;
 `;
 
-const Icon = style.div`
+const Icon = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 0.5rem;
@@ -58,7 +58,7 @@ const Icon = style.div`
   justify-content: center;
 `;
 
-const IconTxt = style.div`
+const IconTxt = styled.div`
   color: #ffffff;
   font-weight: 500;
   text-transform: capitalize;
@@ -68,7 +68,7 @@ const IconTxt = style.div`
   margin: 0px;
 `;
 
-const Username = style.div`
+const Username = styled.div`
   font-weight: 500;
   font-size: 0.875rem;
   text-align: center;
@@ -79,7 +79,7 @@ const Username = style.div`
   width: 70px;
 `;
 
-const Vip = style.span`
+const Vip = styled.span`
   text-transform: uppercase;
   position: absolute;
   background-color: #fdaf08;
@@ -92,7 +92,7 @@ const Vip = style.span`
   left: 0;
 `;
 
-const Name = style.span`
+const Name = styled.span`
   font-weight: 500;
   font-size: 0.875rem;
   text-align: center;
@@ -102,7 +102,7 @@ const Name = style.span`
   height: auto;
 `;
 
-const Loc = style.span`
+const Loc = styled.span`
   line-height: 1.43;
   color: #6f737b;
   margin-bottom: 0.5rem;
@@ -111,7 +111,7 @@ const Loc = style.span`
   text-align: center;
 `;
 
-const Total = style.div`
+const Total = styled.div`
   display: flex;
   flex-direction: row;
   font-size: 12px;
@@ -124,7 +124,7 @@ const Total = style.div`
   width: 68px;
 `;
 
-const Fa = style.i`
+const Fa = styled.i`
   display: inline-block;
   position: relative;
   height: 16px;
@@ -133,14 +133,14 @@ const Fa = style.i`
   margin-right: 0.25rem;
 `;
 
-const Right = style.div`
+const Right = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   max-height: inherit;
 `;
 
-const Star = style.div`
+const Star = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
@@ -148,7 +148,7 @@ const Star = style.div`
   width: 384px;
 `;
 
-const IconStar = style.div`
+const IconStar = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -160,7 +160,7 @@ const IconStar = style.div`
   margin: 0px;
 `;
 
-const Text = style.div`
+const Text = styled.div`
 font-size: 0.875rem;
 line-height: 1.43;
 margin: 8px;
@@ -168,7 +168,7 @@ font-weight: 500;
 align-items: center;
 `;
 
-const Category = style.div`
+const Category = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 8px;
@@ -176,7 +176,7 @@ const Category = style.div`
   width: 391px;
 `;
 
-const Rev1 = style.span`
+const Rev1 = styled.span`
   font-size: 0.875rem;
   font-weight: bold;
   line-height: 1.43;
@@ -186,7 +186,7 @@ const Rev1 = style.span`
   margin: 0 0.5rem 0 0;
 `;
 
-const RevNum = style.span`
+const RevNum = styled.span`
   color: #da3743;
   font-size: 0.875rem;
   font-weight: bold;
@@ -202,7 +202,7 @@ const RevNum = style.span`
   }
 `;
 
-const RevTxt = style.span`
+const RevTxt = styled.span`
   font-size: 0.875rem;
   font-weight: bold;
   line-height: 1.43;
@@ -212,7 +212,7 @@ const RevTxt = style.span`
   width: 30px;
 `;
 
-const RevTxt1 = style.span`
+const RevTxt1 = styled.span`
   font-size: 0.875rem;
   font-weight: bold;
   line-height: 1.43;
@@ -222,7 +222,7 @@ const RevTxt1 = style.span`
   width: 49px;
 `;
 
-const RevTxt2 = style.span`
+const RevTxt2 = styled.span`
   font-size: 0.875rem;
   font-weight: bold;
   line-height: 1.43;
@@ -232,7 +232,7 @@ const RevTxt2 = style.span`
   width: 65px;
 `;
 
-const Footer = style.div`
+const Footer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -240,7 +240,7 @@ const Footer = style.div`
   height: 50px;
 `;
 
-const Rep = style.div`
+const Rep = styled.div`
   display: flex;
   position: relative;
   align-self: flex-start;
@@ -248,7 +248,7 @@ const Rep = style.div`
   height: 50px;
 `;
 
-const RevMore = style.a`
+const RevMore = styled.a`
   color: #da3743;
   text-decoration: none;
   font-weight: normal;
@@ -261,22 +261,22 @@ const RevMore = style.a`
   }
 `;
 
-const Hide = style.div`
+const Hide = styled.div`
   display: none;
 `;
 
-const Test = style.div`
+const Test = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const Flag = style.i`
+const Flag = styled.i`
   display: inherit;
   height: 16px;
   width:16px;
 `;
 
-const FaTxt = style.div`
+const FaTxt = styled.div`
   margin: 0 10px;
   font-weight: 500;
   line-height: 1.43;
@@ -290,7 +290,7 @@ const FaTxt = style.div`
   }
 `;
 
-const RepHide = style.div`
+const RepHide = styled.div`
   position: absolute;
   background: #ffffff;
   z-index: 1000;
