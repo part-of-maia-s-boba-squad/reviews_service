@@ -11,7 +11,7 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [APIExamples] (#API Examples)
+1. [API Examples](#APIExamples)
 1. [Setup Instructions](#setupinstructions)
 1. [Requirements](#requirements)
 1. [Development](#development)
