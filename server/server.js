@@ -23,7 +23,10 @@ app.get('/:id', (req, res) => {
         if (err) {
             res.status(500).send();
         } else {
+<<<<<<< HEAD
             console.log(data);
+=======
+>>>>>>> 4d5975b100ed21b5eb0623259c11e26f6177b1ce
             res.status(200).send(data);
         }
     });

@@ -11,7 +11,10 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
+<<<<<<< HEAD
 1. [API Examples] (#apiexamples)
+=======
+>>>>>>> 4d5975b100ed21b5eb0623259c11e26f6177b1ce
 1. [Setup Instructions](#setupinstructions)
 1. [Requirements](#requirements)
 1. [Development](#development)
@@ -28,6 +31,7 @@
 | /API/restaurant/reviews/:id | PATCH  | Restaurant ID       | STATUS CODE 200                           | Update a Restaurant Document        |
 | /API/restaurant/reviews/:id | DELETE | Restaurant ID       | STATUS CODE 200                           | Delete a Restaurant Document        |
 
+<<<<<<< HEAD
 ## API Examples
 
 | Type | Response Body |
@@ -48,5 +52,22 @@
 
 ## Development
 
+=======
+
+## Setup Instructions
+
+> How to have this repo running locally:
+1. npm install 
+1. npm install -g webpack
+
+
+## Requirements
+
+1. Node 6.13.0
+
+
+## Development
+
+>>>>>>> 4d5975b100ed21b5eb0623259c11e26f6177b1ce
 
 ## Installing Dependencies
