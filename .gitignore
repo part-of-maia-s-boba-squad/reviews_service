@@ -26,3 +26,6 @@ dist/
 db/db_config.js
 
 # data
+db/restaurants_data.csv
+db/reviews_data.csv
+db/users_data.csv
