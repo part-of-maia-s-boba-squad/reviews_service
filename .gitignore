@@ -29,3 +29,4 @@ db/db_config.js
 db/restaurants_data.csv
 db/reviews_data.csv
 db/users_data.csv
+db/reviews_data_cassandra.csv
