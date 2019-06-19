@@ -7,17 +7,15 @@ const Content = styled.div`
   width: 519px;
 `;
 
-
 class FeedList extends React.Component {
 
   render() { 
     const data = this.props.data;
 
-
     return (
       <Content>
       {data.map((review, index) => 
-      <Feed value={review} key={index} />
+      <Feed value={review} key={index} lengthh={data.length}/>
       )}
         
       </Content>

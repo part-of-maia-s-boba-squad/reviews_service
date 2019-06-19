@@ -344,7 +344,6 @@ class ReadLess extends React.Component {
 
   render () {
     const review = this.props.review;
-    
     return (
      <Full>
         <Left>

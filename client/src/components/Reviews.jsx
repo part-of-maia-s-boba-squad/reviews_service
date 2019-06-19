@@ -37,76 +37,79 @@ class Reviews extends React.Component {
   }
 
   getReviews () {
-    axios.get(`/${window.location.href.split('/')[4]}`)
+    let userNum = window.location.href.split('/');
+    userNum = userNum[userNum.length-1];
+    // console.log(userNum);
+    axios.get(`/restaurant/review/${userNum}`)
     .then (response => {
+      // console.log("CLIENT | STATUS: Response recieved. | ROWS DATA:", response);
       this.setState ({
-        allReviews: response.data.sort((a,b) => a.date - b.date),
-        reviews: response.data.sort((a,b) => a.date - b.date)
-      })
+        allReviews: response.data.rows,
+        reviews: response.data.rows
+      });
     })
     .catch( err => {
-      console.log('Error: ', err)
-    })
+      console.log('Error: ', err);
+    });
   } 
 
   handleChange(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
-    if (e.target.value === 'Newest') {
-      this.setState({
-        reviews: this.state.allReviews.sort((a,b) => a.date - b.date)
-      })
-    }
-    if (e.target.value === 'Highest Rating') {
-      this.setState({
-        reviews: this.state.allReviews.sort((a,b) => a.date - b.date).sort((a,b) => b.overall - a.overall)
-      })
-    }
-    if (e.target.value === 'Lowest Rating') {
-      this.setState({
-        reviews: this.state.allReviews.sort((a,b) => a.date - b.date).sort((a,b) => a.overall - b.overall)
-      })
-    }
+    // if (e.target.value === 'Newest') {
+    //   this.setState({
+    //     reviews: this.state.allReviews.sort((a,b) => a.date - b.date)
+    //   })
+    // }
+    // if (e.target.value === 'Highest Rating') {
+    //   this.setState({
+    //     reviews: this.state.allReviews.sort((a,b) => a.date - b.date).sort((a,b) => b.overall - a.overall)
+    //   })
+    // }
+    // if (e.target.value === 'Lowest Rating') {
+    //   this.setState({
+    //     reviews: this.state.allReviews.sort((a,b) => a.date - b.date).sort((a,b) => a.overall - b.overall)
+    //   })
+    // }
   }
 
   handleClick(value) {
     
-    if (value === 1) {
-      this.setState({
-        reviews: this.state.allReviews.filter(review => (review.overall === 1))
-      });
-    }
-    if (value === 2) {
-      this.setState({
-        reviews: this.state.allReviews.filter(review => (review.overall === 2))
-      });
-    }
-    if (value === 3) {
-      this.setState({
-        reviews: this.state.allReviews.filter(review => (review.overall === 3))
-      });
-    }
-    if (value === 4) {
-      this.setState({
-        reviews: this.state.allReviews.filter(review => (review.overall === 4))
-      });
-    }
-    if (value === 5) {
-      this.setState({
-        filterNum: 5,
-        reviews: this.state.allReviews.filter(review => (review.overall === 5))
-      });
-    }
+    // if (value === 1) {
+    //   this.setState({
+    //     reviews: this.state.allReviews.filter(review => (review.overall === 1))
+    //   });
+    // }
+    // if (value === 2) {
+    //   this.setState({
+    //     reviews: this.state.allReviews.filter(review => (review.overall === 2))
+    //   });
+    // }
+    // if (value === 3) {
+    //   this.setState({
+    //     reviews: this.state.allReviews.filter(review => (review.overall === 3))
+    //   });
+    // }
+    // if (value === 4) {
+    //   this.setState({
+    //     reviews: this.state.allReviews.filter(review => (review.overall === 4))
+    //   });
+    // }
+    // if (value === 5) {
+    //   this.setState({
+    //     filterNum: 5,
+    //     reviews: this.state.allReviews.filter(review => (review.overall === 5))
+    //   });
+    // }
 
   }
   
 
   render () {
-
     return (
       <Content>
-        <Ratings handleClick={this.handleClick} value={this.state.allReviews}/>
-        <Sorting handleChange={this.handleChange}/>
+        {/* <Ratings handleClick={this.handleClick} value={this.state.reviews}/>
+        <Sorting handleChange={this.handleChange}/> */}
         <FeedList data={this.state.reviews}/>
       </Content>
     )

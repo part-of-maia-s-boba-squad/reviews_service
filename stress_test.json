@@ -1,0 +1,98 @@
+{
+  "config": {
+    "target": "http://127.0.0.1:3007",
+    "phases": [
+      {
+        "name": "Start",
+        "duration": 1,
+        "arrivalRate": 1,
+        "rampTo": 25
+      },
+      {
+        "name": "Ramping it Up",
+        "duration": 2,
+        "arrivalRate": 25,
+        "rampTo": 50
+      },
+      {
+        "name": "Lead to Peak Performance",
+        "duration": 5,
+        "arrivalRate": 50,
+        "rampTo": 100
+      },
+      {
+        "name": "Peak Performance",
+        "duration": 10,
+        "arrivalRate": 100,
+        "rampTo": 100
+      },
+      {
+        "name": "Ramping Down",
+        "duration": 1,
+        "arrivalRate": 14,
+        "rampTo": 1
+      }
+    ],
+    "processor": "restaruantIdGenerator_artillery.js"
+  },
+  "scenarios": [
+		{
+			"weight": "100/1000",
+			"flow": [
+				{
+					"loop": [
+						{
+							"function": "postReview"
+						},
+						{
+							"post": {
+								"url": "/addReview",
+								"json": {
+                  "restaurantid": "{{ $randomNumber(1,10000000) }}",
+                  "overallrating": "{{ $randomNumber(1,5) }}",
+                  "foodrating": "{{ $randomNumber(1,5) }}",
+                  "servicerating": "{{ $randomNumber(1,5) }}",
+                  "ambiencerating": "{{ $randomNumber(1,5) }}",
+                  "text": "{{ text }}",
+                  "approve": "{{ approve }}",
+                  "noiselevel": "{{ $randomNumber(1,3) }}",
+                  "vip": "{{ vip }}",
+                  "lastdined": "{{ lastDined }}",
+                  "firstname": "{{ firstName }}",
+                  "lastname": "{{ lastName }}",
+                  "location":"{{ location }}"
+								}
+							}
+						}
+					],
+					"count": 7
+        },
+        {
+					"loop": [
+						{
+							"get": {
+								"url": "/review/{{ $randomNumber(1,10000000) }}"
+							}
+						}
+					],
+					"count": 35
+				}
+			]
+		},
+		{
+			"weight": "900/1000",
+			"flow": [
+				{
+					"loop": [
+						{
+							"get": {
+								"url": "/review/{{ $randomNumber(1,10000000) }}"
+							}
+						}
+					],
+					"count": 45
+				}
+			]
+		}
+	]
+}

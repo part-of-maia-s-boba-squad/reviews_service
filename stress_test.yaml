@@ -1,0 +1,42 @@
+config:
+  target: 'http://localhost:3007'
+  phases:
+    - duration: 60
+      arrivalRate: 50
+  payload: 
+    path: "db/reviews_data.csv"
+scenarios:
+  - flow:
+    - get:
+        url: "/1342355"
+
+
+
+
+
+# config:
+#   target: "http://localhost:3007"
+#   phases:
+#     - duration: 1
+#       arrivalRate: 5
+#   payload:
+#     path: ""db/reviews_data.js""
+#     fields:
+#       - "restaurantId"
+# scenarios:
+#   - flow:
+#       - get:
+#         - url: "/6666/"
+
+#       # - post:
+#       #     url: "/search"
+#       #     body: "kw={{ keywords }}"
+#       #     capture:
+#       #       json: "$.results[0].id"
+#       #       as: "id"
+
+#       # - think: 3
+#       # - post:
+#       #     url: "/cart"
+#       #     json:
+#       #       productId: "{{ id }}"

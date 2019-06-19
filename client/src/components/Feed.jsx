@@ -9,24 +9,32 @@ class Feed extends React.Component {
     this.state = {
       showText : false,
     }
-    this.toggle = this.toggle.bind(this);
+    // this.toggle = this.toggle.bind(this);
   }
 
-  toggle (e) {
-    e.preventDefault();
-    this.setState({
-      showText: !this.state.showText
-    });
-  }
+  // toggle (e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     showText: !this.state.showText
+  //   });
+  // }
 
   render () {
-    const isClicked = this.state.showText
+    const isClicked = this.state.showText;
     return (
+    // <div>
+    //   {!isClicked ? 
+    //   (<ReadMore review={this.props.value} toggle={this.toggle}/>)
+    //   :
+    //   (<ReadLess review={this.props.value} toggle={this.toggle}/>)}
+    
+    // </div>
+
     <div>
       {!isClicked ? 
-      (<ReadMore review={this.props.value} toggle={this.toggle}/>)
+      (<ReadMore review={this.props.value} lengthh={this.props.lengthh}/>)
       :
-      (<ReadLess review={this.props.value} toggle={this.toggle}/>)}
+      (<ReadLess review={this.props.value} lengthh={this.props.lengthh}/>)}
     
     </div>
      

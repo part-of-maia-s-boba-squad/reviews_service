@@ -11,29 +11,65 @@ const review = fs.createWriteStream('reviews_data.csv');
 const arrOfDescription = (() => {
     let arr = [];
     for (let i = 0; i < 100; i++) {
-        arr.push(faker.lorem.paragraph());
+        arr.push(faker.lorem.paragraph().slice(0, 100) + ".");
     }
     return arr;
 })();
 
-const reviewsDataGen = () => {
-    writer.pipe(fs.createWriteStream('reviews_data.csv'));
+const arrOfLastDined60days = (() => {
+    let arr = [];
+    for (let i = 0; i < 60; i++) {
+        arr.push(faker.date.recent(60).toString().slice(4, 15));
+    }
+    return arr;
+})();
+
+const arrOfFirstNames = (() => {
+    let arr = [];
+    for (let i = 0; i < 100; i++) {
+        arr.push(faker.name.firstName());
+    }
+    return arr;
+})();
+
+const arrOfLastNames = (() => {
+    let arr = [];
+    for (let i = 0; i < 100; i++) {
+        arr.push(faker.name.lastName());
+    }
+    return arr;
+})();
+
+const arrOfCities = (() => {
+    let arr = [];
     for (let i = 0; i < 50; i++) {
-        writer.write({
-            reviewsId : i,
-            userId : Math.floor(Math.random() * 3333333) + 1,
-            restaurantID : Math.floor(Math.random() * 10e6) + 1,
-            reportCount : Math.floor(Math.random() * 3) +1,
-            helpfulCount : Math.floor(Math.random() * 20) +1,
-            overallRating : Math.floor(Math.random() * 5) +1,
-            foodRating : Math.floor(Math.random() * 5) +1,
-            serviceRating : Math.floor(Math.random() * 5) +1,
-            ambienceRating : Math.floor(Math.random() * 5) +1,
-            text : arrOfDescription[Math.floor(Math.random() * 100)]
-        });
+        arr.push(faker.address.city());
+    }
+    return arr;
+})();
+
+
+const noiseLevelArr = ["Quiet", "Moderate", "Loud"];
+
+const reviewsDataGen = async () => {
+    const writer = fs.createWriteStream('reviews_data.csv', { flag: 'a' });
+    writer.write('restaurantId,overallRating,foodRating,serviceRating,ambienceRating,text,approve,noiseLevel,vip,lastDined,firstName,lastName,location\n');
+    for (let i = 0; i < 50e6; i++) {
+        const ableToWrite = writer.write(`${Math.floor(Math.random() * 10e6) + 1},${Math.floor(Math.random() * 5) + 1},${Math.floor(Math.random() * 5) + 1},${Math.floor(Math.random() * 5) + 1},${Math.floor(Math.random() * 5) + 1},${arrOfDescription[Math.floor(Math.random() * 100)]},${Math.random() < 0.85 ? true : false},${Math.ceil(Math.random() * 3) - 1},${Math.random() < 0.2 ? true : false},${arrOfLastDined60days[Math.floor(Math.random() * (59))]},${arrOfFirstNames[Math.ceil(Math.random() * 100)]},${arrOfLastNames[Math.ceil(Math.random() * 100)]},${arrOfCities[Math.ceil(Math.random() * 50)]}\n`);
+
+        if (!ableToWrite) {
+            await new Promise(resolve => {
+                writer.once('drain', resolve);
+            });
+        }
+        if (i % 500000 === 0) {
+            console.log(`${Math.floor(i / 50e6 * 100)}% of reviews were generated.`);
+        }
     }
     writer.end();
     console.log("50M Reviews Generated");
 };
 
 reviewsDataGen();
+
+copy (select opentable.reviews

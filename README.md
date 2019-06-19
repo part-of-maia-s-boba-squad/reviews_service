@@ -32,7 +32,8 @@
 
 > API CRUD Examples
 ```
-GET : {[{reviewsId:42343,userId:6621207,reportCount:2,helpfulCount:12,overallRating:4,foodRating:5,serviceRating:5,ambienceRating:5,text:"Nemo similique vero ut quis deserunt. Natus ad laborum voluptatibus nisi veniam."} ,[<review2>], [<review3>], ...}
+GET: 
+{[{reviewsId:42343,userId:6621207,reportCount:2,helpfulCount:12,overallRating:4,foodRating:5,serviceRating:5,ambienceRating:5,text:"Nemo similique vero ut quis deserunt. Natus ad laborum voluptatibus nisi veniam."} ,[<review2>], [<review3>], ...}
 
 POST : {userId:6621207,reportCount:0,helpfulCount:0,overallRating:4,foodRating:5,serviceRating:5,ambienceRating:5,text:"Nemo similique vero ut quis deserunt. Natus ad laborum voluptatibus nisi veniam."}
 ```

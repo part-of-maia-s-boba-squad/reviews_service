@@ -1,3 +1,4 @@
+-- FOR OLD SCHEMA FEC -----------------------------------------------------------
 DROP DATABASE IF EXISTS ratings;
 CREATE DATABASE ratings;
 USE ratings;
@@ -30,9 +31,3 @@ CREATE TABLE reviews (
 )
 
 /*run mysql -u root -p < schema.sql */
-
-
-
-
-
-

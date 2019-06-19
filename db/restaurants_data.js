@@ -22,9 +22,7 @@ const restaurantDataGen = () => {
                 num > 0.75 ?
                     `${faker.address.city()}` 
                     :
-                    `${faker.name.lastName()}`,
-            noiseLevel : noiseLevelArr[Math.ceil(Math.random() * 3) - 1],
-            approvalRating : Math.ceil(Math.random() * 15) + 84
+                    `${faker.name.lastName()}`
         });
         if (percentageCount % 1 === 0 && newCount !== percentageCount) {
             console.log(`Restaurants: ${percentageCount}% Complete`);
@@ -32,7 +30,7 @@ const restaurantDataGen = () => {
         }
     }
     writer.end();
-    console.log("3.33M Restaurants Generated");
+    console.log("10M Restaurants Generated");
 };
 
 restaurantDataGen();

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import ReactStars from 'react-rating-stars-component';
 import Report from './Report.jsx';
 import styled from 'styled-components';
+import moment from 'moment';
+import Reviews from './Reviews.jsx';
 
 const Half = styled.div`
   display: flex;
@@ -307,7 +309,6 @@ const RepHide = styled.div`
   display: none;
 `;
 
-
 class ReadMore extends React.Component {
   constructor () {
     super ();
@@ -316,54 +317,55 @@ class ReadMore extends React.Component {
       likeCount: false,
       showRep: false,
       // isCancel: false
-    }
+    };
     
-    this.handleClick = this.handleClick.bind(this);
-    this.showReport = this.showReport.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
+    // this.showReport = this.showReport.bind(this);
+    // this.handleCancel = this.handleCancel.bind(this);
  
   }
     
-  handleClick(e) {
-    e.preventDefault();
-    this.setState({
-      likeCount: !this.state.likeCount
-    })
-  }
+  // handleClick(e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     likeCount: !this.state.likeCount
+  //   })
+  // }
     
-  showReport(e) {
-    e.preventDefault();
-    this.setState({
-      showRep: !this.state.showRep
-    })
-  }
+  // showReport(e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     showRep: !this.state.showRep
+  //   })
+  // }
 
-  handleCancel(e) {
-    e.preventDefault();
-    this.setState({
-      showRep: !this.state.showRep
-    })
-  }
+  // handleCancel(e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     showRep: !this.state.showRep
+  //   })
+  // }
+
 
   render () {
-    const review = this.props.review
+    const review = this.props.review;
 
     return (
      <Half>
         <Left>
           <Icon>
-            <IconTxt>{review.firstName[0]}</IconTxt> 
+            <IconTxt>{review.firstname[0]}</IconTxt> 
           </Icon>
           <Username>
             <Vip>VIP</Vip>
             <Name>
-              {review.firstName}
+              {review.firstname}
             </Name>
           </Username>
           <Loc>{review.location}</Loc>
           <Total>
             <Fa className="far fa-comment-alt"></Fa>
-            <span>{review.total_reviews} reviews</span>
+            <span>{review.helpfulcount} reviews</span>
           </Total>
         </Left>
 
@@ -372,27 +374,29 @@ class ReadMore extends React.Component {
             <IconStar>
               <div className="ic">
                 <ReactStars 
-                count={5}
+                count={(() => {
+                  return (review.overallrating + review.servicerating + review.foodrating + review.ambiencerating)/4
+                })()}
                 size={18}
                 color1={'#da3743'}
                 edit={false}
                 half={true} />
               </div>
-              <Text>Dined {review.date} days ago</Text>
+              <Text>Dined {moment(review.lastdined).fromNow()}</Text>
             </IconStar>
               
             <Category>
               <Rev1>Overall</Rev1>
-              <RevNum>{review.overall}</RevNum>
+              <RevNum>{review.overallrating}</RevNum>
 
               <RevTxt>Food</RevTxt>
-              <RevNum>{review.food}</RevNum>
+              <RevNum>{review.foodrating}</RevNum>
 
               <RevTxt1>Service</RevTxt1>
-              <RevNum>{review.service}</RevNum>
+              <RevNum>{review.servicerating}</RevNum>
 
               <RevTxt2>Ambience</RevTxt2>
-              <RevNum>{review.ambience}</RevNum>
+              <RevNum>{review.ambiencerating}</RevNum>
             </Category>
           </Star>
 
@@ -402,22 +406,19 @@ class ReadMore extends React.Component {
           <Footer>
             <Rep>
             {/* show/hide Read More button */}
-            {review.text.length > 150 ? (<RevMore href="#" onClick={(e) => this.props.toggle(e)}>+ Read more</RevMore>) 
+            {review.text.length > 150 ? (<RevMore href="#">+ Read more</RevMore>) 
             : (<Hide></Hide>)}
 
             </Rep>
             <Rep>
             <Test>
               <Flag className="far fa-flag"></Flag>
-                <FaTxt onClick={(e) => this.showReport(e)} >Report</FaTxt>
-                {(this.state.showRep) ? <Report handleCancel={this.handleCancel}/> : <RepHide></RepHide>}  
+                <FaTxt>Report</FaTxt>
               </Test>
               
               <Test>
                 <Flag className="far fa-caret-square-up"></Flag>
-                {(!this.state.likeCount) ? 
-                  (<FaTxt onClick={(e) => this.handleClick(e)}>Helpful</FaTxt>) 
-                  : (<FaTxt onClick={(e) => this.handleClick(e)}>Helpful(1)</FaTxt>)} 
+                  <FaTxt>Helpful</FaTxt>
               </Test>
 
             </Rep>
@@ -427,5 +428,124 @@ class ReadMore extends React.Component {
     )
   }
 };
+// class ReadMore extends React.Component {
+//   constructor () {
+//     super ();
+    
+//     this.state = {
+//       likeCount: false,
+//       showRep: false,
+//       // isCancel: false
+//     }
+    
+//     this.handleClick = this.handleClick.bind(this);
+//     this.showReport = this.showReport.bind(this);
+//     this.handleCancel = this.handleCancel.bind(this);
+ 
+//   }
+    
+//   handleClick(e) {
+//     e.preventDefault();
+//     this.setState({
+//       likeCount: !this.state.likeCount
+//     })
+//   }
+    
+//   showReport(e) {
+//     e.preventDefault();
+//     this.setState({
+//       showRep: !this.state.showRep
+//     })
+//   }
+
+//   handleCancel(e) {
+//     e.preventDefault();
+//     this.setState({
+//       showRep: !this.state.showRep
+//     })
+//   }
+
+//   render () {
+//     const review = this.props.review
+
+//     return (
+//      <Half>
+//         <Left>
+//           <Icon>
+//             <IconTxt>{review.firstName[0]}</IconTxt> 
+//           </Icon>
+//           <Username>
+//             <Vip>VIP</Vip>
+//             <Name>
+//               {review.firstName}
+//             </Name>
+//           </Username>
+//           <Loc>{review.location}</Loc>
+//           <Total>
+//             <Fa className="far fa-comment-alt"></Fa>
+//             <span>{review.total_reviews} reviews</span>
+//           </Total>
+//         </Left>
+
+//         <Right>
+//           <Star>
+//             <IconStar>
+//               <div className="ic">
+//                 <ReactStars 
+//                 count={5}
+//                 size={18}
+//                 color1={'#da3743'}
+//                 edit={false}
+//                 half={true} />
+//               </div>
+//               <Text>Dined {review.date} days ago</Text>
+//             </IconStar>
+              
+//             <Category>
+//               <Rev1>Overall</Rev1>
+//               <RevNum>{review.overall}</RevNum>
+
+//               <RevTxt>Food</RevTxt>
+//               <RevNum>{review.food}</RevNum>
+
+//               <RevTxt1>Service</RevTxt1>
+//               <RevNum>{review.service}</RevNum>
+
+//               <RevTxt2>Ambience</RevTxt2>
+//               <RevNum>{review.ambience}</RevNum>
+//             </Category>
+//           </Star>
+
+//           <HalfTxt>
+//             <Para>{review.text}</Para>        
+//           </HalfTxt>
+//           <Footer>
+//             <Rep>
+//             {/* show/hide Read More button */}
+//             {review.text.length > 150 ? (<RevMore href="#" onClick={(e) => this.props.toggle(e)}>+ Read more</RevMore>) 
+//             : (<Hide></Hide>)}
+
+//             </Rep>
+//             <Rep>
+//             <Test>
+//               <Flag className="far fa-flag"></Flag>
+//                 <FaTxt onClick={(e) => this.showReport(e)} >Report</FaTxt>
+//                 {(this.state.showRep) ? <Report handleCancel={this.handleCancel}/> : <RepHide></RepHide>}  
+//               </Test>
+              
+//               <Test>
+//                 <Flag className="far fa-caret-square-up"></Flag>
+//                 {(!this.state.likeCount) ? 
+//                   (<FaTxt onClick={(e) => this.handleClick(e)}>Helpful</FaTxt>) 
+//                   : (<FaTxt onClick={(e) => this.handleClick(e)}>Helpful(1)</FaTxt>)} 
+//               </Test>
+
+//             </Rep>
+//           </Footer>
+//         </Right>
+//       </Half>
+//     )
+//   }
+// };
 
 export default ReadMore;

@@ -467,19 +467,19 @@ class Ratings extends React.Component {
     }, 0);
 
     const foods = allData.map(data => {
-      return data.food;
+      return data.foodRating;
     }).reduce((total, val) => {
       return total + val
     }, 0);
 
     const services = allData.map(data => {
-      return data.service;
+      return data.serviceRating;
     }).reduce((total, val) => {
       return total + val
     }, 0);
 
     const ambience = allData.map(data => {
-      return data.ambience;
+      return data.ambienceRating;
     }).reduce((total, val) => {
       return total + val
     }, 0);
