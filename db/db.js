@@ -12,9 +12,9 @@ const getAllReviews_Postgres = (id, callback) => {
   let text = `select * from opentable.reviews where restaurantid = ${id};`;
   pool.query(text, (error, results) => {
     if (error) {
-      // console.log("DB | STATUS: PostGres DB: after query: ", error);
+      console.log("DB | STATUS: PostGres DB: after query: ", error);
     }
-    // console.log("DB | STATUS: Query Successful. DATA: PostGres DB TYPE:", typeof results, "| Raw Data: ", results);
+    console.log("DB | STATUS: Query Successful. DATA: PostGres DB TYPE:", typeof results, "| Raw Data: ", results);
     callback(null, results);
   });
 };

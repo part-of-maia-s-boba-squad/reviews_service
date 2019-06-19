@@ -1,9 +1,17 @@
 const credentials = {
-    user: 'albungay',
-    host: 'ec2-18-218-52-93.us-east-2.compute.amazonaws.com',
+    user: 'power_user',
+    host: '18.218.52.93',
     database: 'postgres',
-    password: '',
     port: 5432
 };
+
+// const credentials = {
+//     user: 'albungay',
+//     host: 'localhost',
+//     database: 'postgres',
+//     password: '',
+//     port: 5432
+// };
+
 
 module.exports = { credentials };

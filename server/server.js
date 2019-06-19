@@ -22,13 +22,13 @@ app.use(
 // //GET req 
 app.get('/review/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    // console.log('SERVER | STATUS: Req data about to query db. | Data:', id);
+    console.log('SERVER | STATUS: Req data about to query db. | Data:', id);
     getAllReviews_Postgres(id, (err, data) => {
         if (err) {
             res.status(500).send();
         } else {
             // cant send "parts" of the data
-            // console.log("SERVER | STATUS: Got to Server. | Rows Data:", data.rows);
+            console.log("SERVER | STATUS: Got to Server. | Rows Data:", data);
             res.status(200).send(data);
         }
     });
