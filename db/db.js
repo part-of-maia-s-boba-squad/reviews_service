@@ -1,3 +1,4 @@
+const relic = require('newrelic');
 //GET req to db for all reviews -- original db: mySQL
 const mysql = require('mysql');
 const config = require('./db_config.js');
